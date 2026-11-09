@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NightShift is a fictional after-dark city guide with activities, games, coffee and a night planner.">
+  <meta name="theme-color" content="#10151f">
+  <title>Make a night of it | NightShift</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/jquery.min.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/common.js"></script>
+  <script defer src="js/home.js"></script>
+</head>
+<body data-page="index">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="site-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="NightShift home"><span class="brand-mark" aria-hidden="true">✳</span>night<span>shift.</span></a>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span><span class="sr-mobile">Menu</span></button>
+      <nav class="nav-links" id="site-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="explore.html">Explore</a><a href="compare.html">Compare</a><a href="suggest.html">Suggest</a></nav>
+      <a class="header-action" href="compare.html">Build a night <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="main">
+  <div class="announcement" role="note"><span class="live-dot" aria-hidden="true"></span> A small guide for a better evening <span class="announcement-star" aria-hidden="true">✦</span> Made for spontaneous plans</div>
+  <section class="hero container" aria-labelledby="hero-title">
+    <div class="hero-content reveal">
+      <p class="eyebrow"><span class="tiny-line" aria-hidden="true"></span> THE CITY AFTER SIX</p>
+      <h1 id="hero-title">Make tonight <em>a good story.</em></h1>
+      <p class="lead-text">Not every great night needs a big plan. Find your mood, pick your people, and let the evening unfold.</p>
+      <div class="hero-actions"><a class="btn btn-lime btn-pill" href="explore.html">Explore the night <span aria-hidden="true">↗</span></a><a class="btn btn-ghost btn-pill" href="compare.html">Build a plan <span aria-hidden="true">↗</span></a></div>
+      <div class="hero-proof"><span class="mini-stars" aria-hidden="true">✳ ✳ ✳</span><span><strong>8 curated ideas</strong><small>One city. Endless evenings.</small></span></div>
+    </div>
+    <div class="hero-art reveal" aria-label="Illustrated city after dark"><img src="images/nightscape.svg" alt="Illustration of a glowing city skyline at night with a bright moon"><div class="art-grain" aria-hidden="true"></div><div class="hero-orbit orbit-one" aria-hidden="true"></div><div class="hero-orbit orbit-two" aria-hidden="true"></div><div class="floating-note float-left"><span class="note-icon" aria-hidden="true">☕</span><span><small>19:00</small><strong>Slow coffee</strong></span></div><div class="floating-note float-right"><span class="note-icon" aria-hidden="true">✦</span><span><small>20:30</small><strong>City lights</strong></span></div><div class="photo-stamp">NIGHTSHIFT / ISSUE 001</div></div>
+    <div class="hero-side-label" aria-hidden="true">GO OUTSIDE. STAY CURIOUS.</div>
+  </section>
+  <div class="ticker" aria-hidden="true"><div class="ticker-track"><span>GOOD COFFEE ✳ AFTER DARK ✳ GREAT COMPANY ✳ CITY LIGHTS ✳ SMALL PLANS ✳</span><span>GOOD COFFEE ✳ AFTER DARK ✳ GREAT COMPANY ✳ CITY LIGHTS ✳ SMALL PLANS ✳</span></div></div>
+  <section class="section container" aria-labelledby="mood-title">
+    <div class="section-top"><div><p class="eyebrow">01 / THE QUICK PICK</p><h2 id="mood-title">What's your <span class="accent-italic">mood?</span></h2><p>Three ways to start. The rest is up to you.</p></div><a class="section-link" href="explore.html">Explore all ideas <span aria-hidden="true">↗</span></a></div>
+    <div class="mood-grid">
+      <button class="mood-card" type="button" data-mood="slow"><span class="mood-number">01 / SLOW</span><span class="mood-emoji" aria-hidden="true">☕</span><strong>Take it easy.</strong><span>Coffee, conversation, no rush.</span><span class="mood-arrow" aria-hidden="true">↗</span></button>
+      <button class="mood-card" type="button" data-mood="social"><span class="mood-number">02 / SOCIAL</span><span class="mood-emoji" aria-hidden="true">✳</span><strong>Bring your people.</strong><span>Games, laughter, friendly rivalry.</span><span class="mood-arrow" aria-hidden="true">↗</span></button>
+      <button class="mood-card" type="button" data-mood="outside"><span class="mood-number">03 / OUTSIDE</span><span class="mood-emoji" aria-hidden="true">☾</span><strong>Follow the lights.</strong><span>Long walks and new perspectives.</span><span class="mood-arrow" aria-hidden="true">↗</span></button>
+    </div>
+    <div class="mood-result" id="mood-result" role="status" aria-live="polite" hidden><div><span class="eyebrow">YOUR RECOMMENDATION</span><h3 id="mood-result-name"></h3><p id="mood-result-desc"></p></div><a id="mood-result-link" class="btn btn-lime btn-pill" href="explore.html">See this idea ↗</a></div>
+  </section>
+  <section class="section section-dark" aria-labelledby="how-title"><div class="container how-layout"><div><p class="eyebrow">02 / HOW IT WORKS</p><h2 id="how-title">Less planning.<br><span class="accent-italic">More living.</span></h2><p class="lead-text">NightShift turns "what should we do?" into a plan that actually happens.</p><a class="section-link" href="compare.html">Try the night planner <span aria-hidden="true">↗</span></a></div><div class="steps-list"><div class="step"><span>01</span><div><h3>Find your vibe</h3><p>Browse ideas by mood, budget, and company.</p></div><span aria-hidden="true">↗</span></div><div class="step"><span>02</span><div><h3>Make it yours</h3><p>Add the activities you want to your own itinerary.</p></div><span aria-hidden="true">↗</span></div><div class="step"><span>03</span><div><h3>Head out</h3><p>Get a simple timeline and estimated total cost.</p></div><span aria-hidden="true">↗</span></div></div></div></section>
+  <section class="section container" aria-labelledby="surprise-title"><div class="surprise-panel"><div><p class="eyebrow">03 / CAN'T DECIDE?</p><h2 id="surprise-title">Leave a little to <em>chance.</em></h2><p>One click. One unexpected idea for tonight.</p><button type="button" class="btn btn-lime btn-pill" id="surprise-btn">Surprise me <span aria-hidden="true">✳</span></button></div><div class="surprise-card" id="surprise-card" aria-live="polite"><span class="eyebrow">YOUR RANDOM PICK</span><span class="surprise-big" aria-hidden="true">✦</span><h3 id="surprise-name">The night is yours.</h3><p id="surprise-description">Hit the button and see what happens.</p><a id="surprise-link" class="section-link" href="explore.html">Browse all ideas ↗</a></div></div></section>
+  <section class="section container faq-section" aria-labelledby="faq-title"><div class="section-top"><div><p class="eyebrow">04 / GOOD TO KNOW</p><h2 id="faq-title">A few quick <span class="accent-italic">answers.</span></h2></div></div><div class="faq-list"><div class="faq-item"><button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-one">Are these real venues? <span aria-hidden="true">＋</span></button><div class="faq-answer" id="faq-one" hidden>NightShift is a student concept project. Place names and costs are fictional examples, not verified business listings.</div></div><div class="faq-item"><button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-two">Do I need to create an account? <span aria-hidden="true">＋</span></button><div class="faq-answer" id="faq-two" hidden>No. You can browse and build a plan immediately. Saved plans are stored only in your current browser.</div></div><div class="faq-item"><button type="button" class="faq-trigger" aria-expanded="false" aria-controls="faq-three">Does the site book anything? <span aria-hidden="true">＋</span></button><div class="faq-answer" id="faq-three" hidden>No real reservations are made. You can plan activities and test forms, but there is no backend or booking integration.</div></div></div></section>
+</main>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div><a class="brand" href="index.html">night<span>shift.</span></a><p>For nights worth remembering, without overthinking them.</p></div>
+      <div class="footer-links"><a href="explore.html">Explore ideas</a><a href="compare.html">Plan the night</a><a href="suggest.html">Suggest a spot</a><a href="CREDITS.txt">Credits</a></div>
+    </div>
+    <div class="container footer-bottom"><span>Student project · Illustrative places & budgets</span><span>Made for Web Technologies 1 · 2026</span></div>
+  </footer>
+</body>
+</html>

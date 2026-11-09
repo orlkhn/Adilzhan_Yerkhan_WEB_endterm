@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Create a personal night itinerary with estimated costs and an interactive timeline.">
+  <meta name="theme-color" content="#10151f">
+  <title>Plan your evening | NightShift</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/jquery.min.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/common.js"></script>
+  <script defer src="js/compare.js"></script>
+</head>
+<body data-page="compare">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="site-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="NightShift home"><span class="brand-mark" aria-hidden="true">✳</span>night<span>shift.</span></a>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span><span class="sr-mobile">Menu</span></button>
+      <nav class="nav-links" id="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="compare.html" aria-current="page">Compare</a><a href="suggest.html">Suggest</a></nav>
+      <a class="header-action" href="compare.html">Build a night <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="main">
+  <section class="page-hero container"><div><p class="eyebrow">THE NIGHT PLANNER / 02</p><h1>A plan worth <em>going out for.</em></h1><p class="lead-text">Choose your company, set your budget, and build an evening that fits. Everything updates instantly.</p></div><div class="page-hero-decoration" aria-hidden="true"><span>✳</span><small>YOUR NIGHT, YOUR RULES</small></div></section>
+  <section class="section container planner-layout" aria-label="Night planner">
+    <div class="planner-main"><div class="panel-head"><div><p class="eyebrow">01 / SET THE SCENE</p><h2>A few little details.</h2></div></div>
+      <form id="planner-form" class="form-panel" novalidate>
+        <div class="row g-3"><div class="col-12 col-md-6"><label for="plan-name" class="form-label">Your name <span class="required">*</span></label><input id="plan-name" name="planName" class="form-control" maxlength="50" placeholder="e.g. Yerkhan" autocomplete="given-name" aria-describedby="plan-name-error" required><div id="plan-name-error" class="field-error" aria-live="polite"></div></div>
+        <div class="col-12 col-md-6"><label for="plan-date" class="form-label">Date <span class="required">*</span></label><input id="plan-date" name="planDate" class="form-control" type="date" aria-describedby="plan-date-error" required><div id="plan-date-error" class="field-error" aria-live="polite"></div></div>
+        <div class="col-12 col-md-6"><label for="plan-time" class="form-label">Start time <span class="required">*</span></label><input id="plan-time" name="planTime" class="form-control" type="time" value="19:00" aria-describedby="plan-time-error" required><div id="plan-time-error" class="field-error" aria-live="polite"></div></div>
+        <div class="col-12 col-md-6"><label for="plan-people" class="form-label">People <span class="required">*</span></label><input id="plan-people" name="planPeople" class="form-control" type="number" min="1" max="6" step="1" value="2" aria-describedby="plan-people-error" required><div id="plan-people-error" class="field-error" aria-live="polite"></div></div>
+        <div class="col-12 col-md-6"><label for="plan-budget" class="form-label">Budget per person (₸) <span class="required">*</span></label><input id="plan-budget" name="planBudget" class="form-control" type="number" min="500" max="50000" step="500" value="8000" aria-describedby="plan-budget-error" required><div id="plan-budget-error" class="field-error" aria-live="polite"></div></div>
+        <div class="col-12 col-md-6"><label for="plan-mood" class="form-label">Your mood <span class="required">*</span></label><select id="plan-mood" name="planMood" class="form-select" aria-describedby="plan-mood-error" required><option value="">Pick a vibe</option><option value="slow">Slow down</option><option value="social">Get together</option><option value="outside">Step outside</option><option value="mixed">A bit of everything</option></select><div id="plan-mood-error" class="field-error" aria-live="polite"></div></div></div>
+        <div class="form-footnote">This is a local-only demo. No bookings are made, and no personal data is sent to a server.</div>
+      </form>
+      <div class="panel-head activities-head"><div><p class="eyebrow">02 / MAKE IT YOURS</p><h2>Pick your stops.</h2><p class="minor">Add up to three activities. You can rearrange them by removing and adding.</p></div><span class="pill-counter" id="selected-count">0 / 3 picked</span></div>
+      <div id="planner-choices" class="planner-choices" aria-live="polite"></div>
+    </div>
+    <aside class="planner-side" aria-label="Your evening summary"><div class="summary-card"><div class="summary-top"><p class="eyebrow">TONIGHT'S BLUEPRINT</p><span class="summary-spark" aria-hidden="true">✳</span></div><h2>Your night,<br><em>in the making.</em></h2><div class="summary-meta"><div><span>EST. TOTAL</span><strong id="summary-total">₸0</strong></div><div><span>DURATION</span><strong id="summary-duration">0 min</strong></div></div>
+      <div class="budget-head"><span>Budget fit</span><strong id="budget-label">Add your first stop</strong></div><div class="budget-track" role="progressbar" id="budget-track" aria-label="Estimated budget used" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div id="budget-progress"></div></div>
+      <button class="timeline-toggle" type="button" id="timeline-toggle" aria-expanded="true" aria-controls="timeline-panel">Evening timeline <span aria-hidden="true">⌄</span></button><div id="timeline-panel"><ol class="timeline" id="timeline"><li class="timeline-empty">Your selected stops will appear here.</li></ol></div>
+      <button type="submit" class="btn btn-lime btn-pill full-width" form="planner-form" id="save-plan">Save this plan <span aria-hidden="true">↗</span></button><button type="button" class="btn btn-ghost btn-pill full-width" id="clear-plan">Clear selected stops</button><div class="save-message" id="save-message" role="status" aria-live="polite" hidden></div><p class="summary-disclaimer">Illustrative estimates only. Data is stored in this browser; no venue is contacted.</p></div>
+      <div class="mini-tip"><span aria-hidden="true">✦</span><p><strong>Quick tip</strong><br>Choose a slow start, one activity, and a short walk. That's a great three-stop night.</p></div>
+    </aside>
+  </section>
+</main>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div><a class="brand" href="index.html">night<span>shift.</span></a><p>For nights worth remembering, without overthinking them.</p></div>
+      <div class="footer-links"><a href="explore.html">Explore ideas</a><a href="compare.html">Plan the night</a><a href="suggest.html">Suggest a spot</a><a href="CREDITS.txt">Credits</a></div>
+    </div>
+    <div class="container footer-bottom"><span>Student project · Illustrative places & budgets</span><span>Made for Web Technologies 1 · 2026</span></div>
+  </footer>
+</body>
+</html>
