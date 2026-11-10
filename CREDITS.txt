@@ -1,0 +1,28 @@
+NIGHTSHIFT — SOURCES AND ACKNOWLEDGEMENTS
+WEB Technologies 1 (Front End) — Endterm, 2026
+
+PROJECT
+NightShift is a fictional student concept for choosing and planning evening activities.
+All eight venues, prices, durations and recommendations are illustrative; these are not verified businesses.
+There is no backend, payment integration, or real booking feature. Saved items exist only in the visitor's browser.
+
+TOOLS AND CODE
+HTML, original custom CSS, and JavaScript ES6+ — project-specific implementation.
+Bootstrap CSS v5.3.6 — The Bootstrap Authors, MIT License.
+Official project: https://getbootstrap.com/
+File: css/bootstrap.min.css (licensed third-party framework, not a downloaded page template).
+jQuery v3.6.1 — OpenJS Foundation, MIT License.
+Official project: https://jquery.com/
+File: js/jquery.min.js.
+
+VISUALS
+All nine SVG images (nightscape and eight activity illustrations) were generated specifically
+for this project using custom SVG code, with assistance from OpenAI ChatGPT.
+SVG files: images/*.svg.
+Unicode emoji and symbols: standard text characters, not downloaded icon packs.
+No downloaded website template or UI theme is used.
+
+PRIOR MIDTERM SOURCES
+The earlier Midterm repository contains Unsplash photographs and previously generated images,
+credited in its own CREDITS.txt history. Those old photos are not needed by this standalone version.
+Original repository: https://github.com/Elkanmn/Midterm_AmangaliyevYerkhan_AdilzhanOralkhan

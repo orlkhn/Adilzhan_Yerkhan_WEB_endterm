@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Use a validated form to save a local demo suggestion for a night out.">
+  <meta name="theme-color" content="#10151f">
+  <title>Suggest an idea | NightShift</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/jquery.min.js"></script>
+  <script defer src="js/data.js"></script>
+  <script defer src="js/common.js"></script>
+  <script defer src="js/suggest.js"></script>
+</head>
+<body data-page="suggest">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div class="site-glow" aria-hidden="true"></div>
+  <header class="site-header">
+    <div class="container nav-shell">
+      <a class="brand" href="index.html" aria-label="NightShift home"><span class="brand-mark" aria-hidden="true">✳</span>night<span>shift.</span></a>
+      <button type="button" class="menu-toggle" id="menu-toggle" aria-expanded="false" aria-controls="site-nav"><span aria-hidden="true">☰</span><span class="sr-mobile">Menu</span></button>
+      <nav class="nav-links" id="site-nav" aria-label="Main navigation"><a href="index.html">Home</a><a href="explore.html">Explore</a><a href="compare.html">Compare</a><a href="suggest.html" aria-current="page">Suggest</a></nav>
+      <a class="header-action" href="compare.html">Build a night <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main id="main">
+  <section class="page-hero container"><div><p class="eyebrow">SHARE THE GOOD STUFF / 03</p><h1>Know a place <em>we'd love?</em></h1><p class="lead-text">Tell us about it. A quiet corner, a late-night bite, a place that feels like yours.</p></div><div class="page-hero-decoration" aria-hidden="true"><span>↗</span><small>THE BEST IDEAS ARE SHARED</small></div></section>
+  <section class="section container suggest-layout" aria-label="Suggest an idea"><div class="suggest-aside"><p class="eyebrow">YOUR LITTLE DISCOVERY</p><h2>Great nights start with <span class="accent-italic">good tips.</span></h2><p>Tell the story, not just the name. What makes this spot worth getting out for?</p><div class="aside-art"><span aria-hidden="true">✳</span><div><small>YOUR IDEA MATTERS</small><strong>Pass it on.</strong></div></div><div class="tip-box"><button type="button" id="tips-toggle" class="tips-toggle" aria-controls="tips-content" aria-expanded="false">How to write a good suggestion <span aria-hidden="true">＋</span></button><div id="tips-content" hidden><p>Give the spot a clear name, choose its vibe, and describe the activity and who would enjoy it. Please avoid sharing sensitive personal information.</p></div></div><p class="small-note">This is an interactive student demo. Nothing is sent to a server.</p></div>
+  <div><form id="suggest-form" class="form-panel suggest-form" novalidate><div class="form-kicker"><span>01 — THE DETAILS</span><span>ALL FIELDS MARKED * REQUIRED</span></div>
+    <div class="row g-3"><div class="col-12 col-md-6"><label class="form-label" for="visitor-name">Your name <span class="required">*</span></label><input class="form-control" id="visitor-name" name="visitorName" autocomplete="name" maxlength="60" placeholder="Your first name" aria-describedby="visitor-name-error" required><div class="field-error" id="visitor-name-error" aria-live="polite"></div></div><div class="col-12 col-md-6"><label class="form-label" for="email">Email <span class="required">*</span></label><input class="form-control" type="email" id="email" name="email" autocomplete="email" maxlength="120" placeholder="you@example.com" aria-describedby="email-error" required><div class="field-error" id="email-error" aria-live="polite"></div></div>
+    <div class="col-12"><label class="form-label" for="spot-name">Spot name <span class="required">*</span></label><input class="form-control" id="spot-name" name="spotName" minlength="2" maxlength="80" placeholder="What is it called?" aria-describedby="spot-name-error" required><div class="field-error" id="spot-name-error" aria-live="polite"></div></div>
+    <div class="col-12 col-md-6"><label class="form-label" for="category">Category <span class="required">*</span></label><select class="form-select" id="category" name="category" aria-describedby="category-error" required><option value="">Choose a category</option><option value="slow">Slow down</option><option value="social">Get together</option><option value="outside">Step outside</option></select><div class="field-error" id="category-error" aria-live="polite"></div></div><div class="col-12 col-md-6"><label class="form-label" for="spot-budget">Estimated price (₸) <span class="required">*</span></label><input class="form-control" type="number" id="spot-budget" name="spotBudget" min="0" max="50000" step="100" placeholder="e.g. 3500" aria-describedby="spot-budget-error" required><div class="field-error" id="spot-budget-error" aria-live="polite"></div></div>
+    <div class="col-12"><label class="form-label" for="reason">What makes it special? <span class="required">*</span></label><textarea class="form-control" id="reason" name="reason" rows="5" minlength="20" maxlength="500" placeholder="Describe the activity, atmosphere and who it suits..." aria-describedby="reason-error reason-help" required></textarea><div class="character-count" id="reason-help">At least 20 characters · <span id="reason-count">0</span> / 500</div><div class="field-error" id="reason-error" aria-live="polite"></div></div></div>
+    <div class="form-legal">The suggestion is saved only on this device. Your email is validated but intentionally not stored.</div><button class="btn btn-lime btn-pill full-width" type="submit">Check & save suggestion <span aria-hidden="true">↗</span></button>
+  </form><div id="suggest-success" class="save-message large-message" role="status" aria-live="polite" hidden></div>
+  <div class="my-suggestions"><div class="my-suggestions-head"><div><p class="eyebrow">LOCALLY SAVED IDEAS</p><h2>Your recent discoveries</h2></div><button class="text-button" id="clear-suggestions" type="button">Clear mine ↺</button></div><div id="suggestions-list" class="suggestions-list" aria-live="polite"></div></div>
+  </div></section>
+</main>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <div><a class="brand" href="index.html">night<span>shift.</span></a><p>For nights worth remembering, without overthinking them.</p></div>
+      <div class="footer-links"><a href="explore.html">Explore ideas</a><a href="compare.html">Plan the night</a><a href="suggest.html">Suggest a spot</a><a href="CREDITS.txt">Credits</a></div>
+    </div>
+    <div class="container footer-bottom"><span>Student project · Illustrative places & budgets</span><span>Made for Web Technologies 1 · 2026</span></div>
+  </footer>
+</body>
+</html>
